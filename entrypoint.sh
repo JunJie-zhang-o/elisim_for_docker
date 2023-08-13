@@ -17,7 +17,7 @@ sed -i 's/$(hostname)/localhost/g' /usr/share/novnc/utils/launch.sh
 docker_ip=$(hostname -i)
 
 # User instructions
-echo -e "Universal Robots simulator for e-Series:${VERSION}\n\n"
+echo -e "Elite Robots CS Serial Simulator \n\n"
 
 echo -e "IP address of the simulator\n"
 echo -e "     $docker_ip\n\n"
@@ -27,8 +27,5 @@ echo -e "     http://$docker_ip:6080/vnc.html?host=$docker_ip&port=6080\n\n"
 
 echo -e "Access the robots user interface with a VNC application on this address:\n"
 echo -e "     $docker_ip:5900\n\n"
-
-echo -e "You can find documentation on how to use this container on dockerhub:\n"
-echo -e "     https://hub.docker.com/r/universalrobots/ursim_e-series\n\n"
 
 echo -e "Press Crtl-C to exit\n\n"
