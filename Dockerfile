@@ -96,5 +96,5 @@ EXPOSE 29999
 EXPOSE 30001
 EXPOSE 30004
 
-CMD [ "/bin/bash" ]
-# ENTRYPOINT ["/entrypoint.sh"]
+# CMD [ "/bin/bash" ]
+ENTRYPOINT ["/entrypoint.sh"]
