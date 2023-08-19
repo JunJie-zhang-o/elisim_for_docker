@@ -7,7 +7,8 @@ LABEL description="elite cs serial robot docker sim env with novnc"
 # 开启多架构支持
 RUN dpkg --add-architecture i386
 # 安装基础的命令行工具
-RUN apt update && apt install bash-completion net-tools vim nano sudo curl wget dpkg -y
+RUN yes | unminimize
+RUN apt update && apt install bash-completion net-tools vim nano man adduser sudo curl wget dpkg psmisc procps build-essential -y
 
 # 安装miniconda 以及 python3.5环境
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh && \
@@ -84,6 +85,8 @@ COPY entrypoint.sh  /entrypoint.sh
 COPY fonts/*  /usr/share/fonts/
 # COPY sim2.3 sim
 RUN sudo chmod +x /entrypoint.sh && chmod +x /usr/share/novnc/utils/launch.sh
+RUN echo "conda activate elisim" >> /root/.bashrc && \
+    echo "conda activate elisim" >> /home/elibot/.bashrc
 
 # USER elibot
 EXPOSE 502
