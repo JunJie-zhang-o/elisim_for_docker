@@ -30,4 +30,4 @@ docker run -it --rm --platform linux/amd64 -d -p 6080:6080 --name elisim elibot
 
 http://localhost:6080/vnc.html?host=localhost&port=6080
 
-![ScreenFlow](/Users/jay/Pictures/ScreenFlow.gif)
+![ScreenFlow](./image/README/ScreenFlow.gif)
