@@ -28,4 +28,7 @@ echo -e "     http://$docker_ip:6080/vnc.html?host=$docker_ip&port=6080\n\n"
 echo -e "Access the robots user interface with a VNC application on this address:\n"
 echo -e "     $docker_ip:5900\n\n"
 
-echo -e "Press Crtl-C to exit\n\n"
+# echo -e "Press Crtl-C to exit\n\n"
+
+# 启动bash shell
+exec /bin/bash
