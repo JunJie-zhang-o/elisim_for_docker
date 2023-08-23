@@ -64,8 +64,8 @@ RUN wget http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/multiarch-support_2.
 
 
 # 添加用户并设置密码
-RUN useradd -ms /bin/bash elibot
-RUN echo "elibot:elibot" | chpasswd && adduser elibot sudo
+# RUN useradd -ms /bin/bash elibot
+# RUN echo "elibot:elibot" | chpasswd && adduser elibot sudo
 RUN echo 'root:elibot' | chpasswd
 
 
@@ -85,8 +85,9 @@ COPY entrypoint.sh  /entrypoint.sh
 COPY fonts/*  /usr/share/fonts/
 # COPY sim2.3 sim
 RUN sudo chmod +x /entrypoint.sh && chmod +x /usr/share/novnc/utils/launch.sh
-RUN echo "conda activate elisim" >> /root/.bashrc && \
-    echo "conda activate elisim" >> /home/elibot/.bashrc
+RUN echo "conda activate elisim" >> /root/.bashrc 
+# RUN echo "conda activate elisim" >> /root/.bashrc && \
+#    echo "conda activate elisim" >> /home/elibot/.bashrc
 
 # USER elibot
 EXPOSE 502
