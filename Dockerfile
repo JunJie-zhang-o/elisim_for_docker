@@ -8,7 +8,7 @@ LABEL description="elite cs serial robot docker sim env with novnc"
 RUN dpkg --add-architecture i386
 # 安装基础的命令行工具
 RUN yes | unminimize
-RUN apt update && apt install bash-completion net-tools vim nano man adduser sudo curl wget dpkg psmisc procps build-essential -y
+RUN apt update && apt install bash-completion net-tools vim nano man adduser sudo curl wget dpkg psmisc procps build-essential sshpass -y
 
 # 安装miniconda 以及 python3.5环境
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh && \
@@ -61,6 +61,11 @@ RUN wget http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/multiarch-support_2.
     wget https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/12109835/+files/libevent-pthreads-2.0-5_2.0.21-stable-2ubuntu0.16.04.1_amd64.deb && \
     dpkg -i libevent-pthreads-2.0-5_2.0.21-stable-2ubuntu0.16.04.1_amd64.deb && \
     rm *.deb
+
+# runit 配置
+RUN apt-get -y install runit && \
+    mkdir -p /home/root && \
+    ln -s /etc/service /home/root/service
 
 
 # 添加用户并设置密码
