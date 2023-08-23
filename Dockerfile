@@ -77,8 +77,8 @@ ENV PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 ENV MAVEN_HOME=/usr/share/maven
 ENV PATH=$MAVEN_HOME/bin:$PATH
 ENV DISPLAY=:0
-ENV LANG=en_US.UTF-8
-ENV LANGUAGE=en_US.UTF-8
+ENV LANG=zh_CN.UTF-8
+ENV LANGUAGE=zh_CN.UTF-8
 
 
 COPY entrypoint.sh  /entrypoint.sh
